@@ -1,0 +1,104 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <EditText
+        android:id="@+id/editLastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="LastName"
+        android:layout_alignLeft="@+id/editFirstName"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/editFirstName"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/editPhoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Phone Number"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/editLastName"
+        android:ems="10"
+        android:inputType="numberSigned" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/editEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/editPhoneNumber"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/editBirthday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/editEmail"
+        android:layout_toLeftOf="@+id/imageButton1"
+        android:ems="10"
+        android:hint=" Birthday (dd/mm/yy)" />
+
+    <EditText
+        android:id="@+id/editFirstName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="28dp"
+        android:hint="First Name"
+        android:ems="10" />
+
+    <Button
+        android:id="@+id/newCustomerSaveData"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:layout_alignBaseline="@+id/newCustomerHomeButton"
+        android:layout_alignBottom="@+id/newCustomerHomeButton"
+        android:layout_marginLeft="19dp"
+        android:layout_toRightOf="@+id/newCustomerHomeButton"
+        android:background="@drawable/button_shape"
+        android:text="Save" />
+
+    <Button
+        android:id="@+id/newCustomerHomeButton"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:layout_alignBaseline="@+id/newCustomerBackButton"
+        android:layout_alignBottom="@+id/newCustomerBackButton"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_shape"
+        android:text="Home" />
+
+    <Button
+        android:id="@+id/newCustomerBackButton"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/editBirthday"
+        android:layout_marginRight="17dp"
+        android:layout_marginTop="38dp"
+        android:layout_toLeftOf="@+id/newCustomerHomeButton"
+        android:background="@drawable/button_shape"
+        android:text="Back" />
+
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/newCustomerBackButton"
+        android:layout_alignParentRight="true"
+        android:onClick="selectDate"
+        android:src="@drawable/ic_datepicker" />
+ 
+</RelativeLayout>

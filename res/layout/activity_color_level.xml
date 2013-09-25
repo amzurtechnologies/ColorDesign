@@ -1,0 +1,77 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     >
+
+   <TextView
+        android:id="@+id/colorDesignScreenHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/cdesign" />
+
+    <TextView
+        android:id="@+id/colorDesignLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/colorDesignScreenHeader"
+        android:background="#357EC7"
+        android:gravity="center"
+        android:text="Color Level and Tones"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
+     <TextView
+         android:id="@+id/colorLevelFooter"
+         android:layout_width="wrap_content"
+         android:layout_height="10dp"
+         android:layout_alignParentBottom="true"
+         android:layout_alignParentLeft="true"
+         android:layout_alignParentRight="true"
+         android:layout_marginBottom="36dp"
+         android:background="#357EC7"
+         android:gravity="center"
+         android:textColor="#FFFFFF"
+         android:textStyle="bold" />
+
+     <Button
+         android:id="@+id/colorLevelNextButton"
+         android:layout_width="100dp"
+         android:layout_height="25dp"
+         android:layout_alignParentBottom="true"
+         android:layout_alignParentRight="true"
+         android:background="@drawable/button_shape"
+         android:text="Next" />
+
+     <Button
+         android:id="@+id/colorLevelBackButton"
+         android:layout_width="100dp"
+         android:layout_height="25dp"
+         android:layout_alignParentBottom="true"
+         android:layout_alignParentLeft="true"
+         android:background="@drawable/button_shape"
+         android:text="Back" />
+
+     <Button
+         android:id="@+id/colorLevelHomeButton"
+         android:layout_width="100dp"
+         android:layout_height="25dp"
+         android:layout_alignParentBottom="true"
+         android:layout_centerHorizontal="true"
+         android:background="@drawable/button_shape"
+         android:text="Home" />
+
+     <include
+         android:id="@+id/otherWheelieLayout"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/colorDesignLabel"
+         android:layout_centerHorizontal="true"
+         android:layout_marginTop="55dp"
+         layout="@layout/color_level_wheelie" />
+    
+</RelativeLayout>

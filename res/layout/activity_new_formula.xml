@@ -1,0 +1,92 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/colorDesignNewFormula"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/colorDesignScreenHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/cdesign" />
+
+    <TextView
+        android:id="@+id/colorDesignLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/colorDesignScreenHeader"
+        android:background="#357EC7"
+        android:gravity="center"
+        android:text="@string/labelScreen1"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/naturalButton2"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/naturalButton1"
+        android:layout_toRightOf="@+id/naturalButton1"
+        android:background="@drawable/buttoncenter"
+        android:radius="8dp"
+        android:text="40 - 70% Gray"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/naturalButton3"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/naturalButton2"
+        android:layout_toRightOf="@+id/naturalButton2"
+        android:background="@drawable/button_rightradius_shape"
+        android:radius="8dp"
+        android:text="70 -100% Gray"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/colorScreenNextButton"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/naturalButton1"
+        android:layout_toRightOf="@+id/naturalButton2"
+        android:background="@drawable/button_shape"
+        android:text="Next" />
+
+    <Button
+        android:id="@+id/naturalButton1"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_above="@+id/colorScreenBackButton"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="41dp"
+        android:layout_marginLeft="16dp"
+        android:background="@drawable/button_leftradius_shape"
+        android:radius="8dp"
+        android:text="0 - 40% gray"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/colorScreenBackButton"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_alignLeft="@+id/naturalButton1"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button_shape"
+        android:text="Back" />
+
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/colorDesignLabel"
+        android:layout_marginTop="22dp"
+        layout="@layout/activity_wheel_view" />
+	
+</RelativeLayout>

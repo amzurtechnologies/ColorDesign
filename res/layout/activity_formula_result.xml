@@ -1,0 +1,110 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+   <TextView
+        android:id="@+id/formulaResultScreenHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/cdesign" />
+
+    <TextView
+        android:id="@+id/formulaResultLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/formulaResultScreenHeader"
+        android:background="#357EC7"
+        android:gravity="center"
+        android:text="Formula Result"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+    
+         
+    
+    
+    <TextView
+         android:id="@+id/formulaResultFooter"
+         android:layout_width="wrap_content"
+         android:layout_height="10dp"
+         android:layout_alignParentBottom="true"
+         android:layout_alignParentLeft="true"
+         android:layout_alignParentRight="true"
+         android:layout_marginBottom="36dp"
+         android:background="#357EC7"
+         android:gravity="center"
+         android:textColor="#FFFFFF"
+         android:textStyle="bold" />
+
+     <Button
+         android:id="@+id/formulaResultUpdateButton"
+         android:layout_width="100dp"
+         android:layout_height="25dp"
+         android:layout_alignParentBottom="true"
+         android:layout_alignParentRight="true"
+         android:background="@drawable/button_shape1"
+         android:text="Update" />
+
+     <Button
+         android:id="@+id/formulaResultBackButton"
+         android:layout_width="100dp"
+         android:layout_height="25dp"
+         android:layout_alignParentBottom="true"
+         android:layout_alignParentLeft="true"
+         android:background="@drawable/button_shape"
+         android:text="Back" />
+
+     <Button
+         android:id="@+id/formulaResultHomeButton"
+         android:layout_width="100dp"
+         android:layout_height="25dp"
+         android:layout_alignParentBottom="true"
+         android:layout_centerHorizontal="true"
+         android:background="@drawable/button_shape"
+         android:text="Home" />
+
+     <TextView
+         android:id="@+id/overallFormulaResult"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignLeft="@+id/overAllFormulaResultHeader"
+         android:layout_below="@+id/overAllFormulaResultHeader"
+         android:layout_marginTop="47dp"
+         android:text="Mix Some Chemical" />
+
+     <TextView
+         android:id="@+id/overallFormulaTimingHeader"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignLeft="@+id/overallFormulaResult"
+         android:layout_below="@+id/overallFormulaResult"
+         android:layout_marginTop="94dp"
+         android:text="Timing"
+         android:textStyle="bold" />
+
+     <TextView
+         android:id="@+id/overAllTimingResult"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignLeft="@+id/overallFormulaTimingHeader"
+         android:layout_below="@+id/overallFormulaTimingHeader"
+         android:layout_marginTop="22dp"
+         android:text="Wait Until It Dries" />
+
+     <TextView
+         android:id="@+id/overAllFormulaResultHeader"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignRight="@+id/formulaResultHomeButton"
+         android:layout_below="@+id/formulaResultLabel"
+         android:layout_marginRight="20dp"
+         android:layout_marginTop="41dp"
+         android:text="Overall Formula Result:"
+         android:textStyle="bold" />
+
+</RelativeLayout>
