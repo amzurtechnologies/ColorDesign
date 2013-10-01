@@ -65,7 +65,7 @@
         android:layout_alignParentLeft="true"
         android:layout_marginBottom="41dp"
         android:layout_marginLeft="16dp"
-        android:background="@drawable/button_leftradius_shape"
+        android:background="@drawable/button_rightradius_shape"
         android:radius="8dp"
         android:text="0 - 40% gray"
         android:textColor="#FFFFFF"

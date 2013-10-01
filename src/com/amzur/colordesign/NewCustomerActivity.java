@@ -21,13 +21,19 @@ import android.widget.Toast;
 public class NewCustomerActivity extends FragmentActivity implements OnClickListener {
 	private EditText first_name,last_name,phone_number,email,date_of_birth;
     private Button newCustomerBackButton,newCustomerSaveButton,newCustomerHomeButton;
-    String valid_mob_number = null, valid_email = null, valid_first_name = null,valid_last_name = null,valid_dob = null,Toast_msg= null;
+    String valid_id,valid_mob_number, valid_email, valid_first_name,valid_last_name,valid_dob,Toast_msg;
+    public static final int ALERT=1;
     int USER_ID;
-    DatabaseHandler dbHandler = new DatabaseHandler(this, Toast_msg, null, USER_ID);
+    DatabaseHandler dbHandler = new DatabaseHandler(this);
+//    SQLiteDatabase db;
+//    Test t;
+//    SQLiteStatement statement;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_new_customer);
+//		t = new Test(this);
+//		db = t.getWritableDatabase();
 		Objects_Creation();
 		
 		newCustomerBackButton.setOnClickListener(this);
@@ -57,8 +63,20 @@ public class NewCustomerActivity extends FragmentActivity implements OnClickList
 			
 		case R.id.newCustomerSaveData:
 		     
-			
-
+			valid_first_name = first_name.getText().toString();
+			valid_last_name  = last_name.getText().toString();
+			valid_mob_number = phone_number.getText().toString();
+			valid_email      = email.getText().toString();
+			valid_dob        = date_of_birth.getText().toString();
+          
+//			statement = db.compileStatement("insert into contacts values(?,?,?,?,?)");
+//			
+//			statement.bindString(1, valid_first_name);
+//			statement.bindString(2, valid_last_name);
+//			statement.bindString(3, valid_mob_number);
+//			statement.bindString(4, valid_email);
+//			statement.bindString(5, valid_dob);
+//			statement.executeInsert();
 		    dbHandler.Add_Contact(new Contact(valid_first_name,valid_last_name,
 			    valid_mob_number, valid_email,valid_dob));
 		    Toast_msg = valid_first_name+valid_last_name;
@@ -86,11 +104,7 @@ public class NewCustomerActivity extends FragmentActivity implements OnClickList
 		email                = (EditText)findViewById(R.id.editEmail);
 		date_of_birth        = (EditText)findViewById(R.id.editBirthday);
 		
-		valid_first_name = first_name.getText().toString();
-		valid_last_name  = last_name.getText().toString();
-		valid_mob_number = phone_number.getText().toString();
-		valid_email      = email.getText().toString();
-		valid_dob        = date_of_birth.getText().toString();
+		
 		
 		
 		//Buttons Object Creation

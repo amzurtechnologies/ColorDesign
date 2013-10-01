@@ -26,6 +26,9 @@ public class NewFormula extends Activity implements OnClickListener {
 	private int colorSelectionImages[] =
 			new int[] {R.drawable.hair1, R.drawable.hair2, R.drawable.hair3, R.drawable.hair4,R.drawable.hair5,R.drawable.hair6,R.drawable.hair7,R.drawable.hair8,R.drawable.hair9,R.drawable.hair10};
 	
+	
+	private String colorSelectionLevel[] =
+			new String[] {"1","2","3","4","5","6","7","8","9","10"};
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -36,7 +39,7 @@ public class NewFormula extends Activity implements OnClickListener {
 		colorScreenNext.setOnClickListener(this);
         colorDye= (WheelView) findViewById(R.id.naturalColorSelection);
 		colorDye.setVisibleItems(3);
-		colorDye.setViewAdapter(new CountryAdapter(this));
+		colorDye.setViewAdapter(new ColorAdapter(this));
 		colorDye.setCurrentItem(1);
 		colorDye.addScrollingListener(new OnWheelScrollListener() {
 			
@@ -79,17 +82,18 @@ public class NewFormula extends Activity implements OnClickListener {
 		 }
 	}
     
-	private class CountryAdapter extends AbstractWheelTextAdapter {
+	private class ColorAdapter extends AbstractWheelTextAdapter {
 		// Countries names
 		
 
 		/**
 		 * Constructor
 		 */
-		protected CountryAdapter(Context context) {
+		protected ColorAdapter(Context context) {
 			super(context, R.layout.activity_color_selection_main, NO_RESOURCE);
 
 			setItemTextResource(R.id.colorSelectionValue);
+			
 		}
     
 		public View getItem(int index, View cachedView, ViewGroup parent) {

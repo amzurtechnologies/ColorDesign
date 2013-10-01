@@ -1,30 +1,20 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-   >
-<!--  
-    <AutoCompleteTextView
-        android:id="@+id/autoCompleteTextView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
+    android:layout_height="match_parent" >
+   
+    <TextView
+        android:id="@+id/formulaResultScreenHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
         android:layout_alignParentTop="true"
-        android:ems="10"
-         />
-
-
-    <ListView
-        android:id="@+id/listView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/autoCompleteTextView1"
-        android:layout_alignRight="@+id/autoCompleteTextView1" >
-
-    </ListView>
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/cdesign" />
     
-    -->
+  
+    
+    
+    
 
     <Button
         android:id="@+id/existingClientNewCustomer"
@@ -47,5 +37,30 @@
         android:layout_marginLeft="16dp"
         android:background="@drawable/button_shape"
         android:text="Home" />
+
+    <AutoCompleteTextView
+        android:id="@+id/existingClientAutoComplete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/formulaResultScreenHeader"
+        android:ems="10"
+        android:hint="Type Your Name" >
+
+        <requestFocus />
+    </AutoCompleteTextView>
+
+    <ListView
+        android:id="@+id/existingClientListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/existingClientNewCustomer"
+        android:layout_below="@+id/existingClientAutoComplete"
+        android:layout_centerHorizontal="true" >
+
+    </ListView>
+    
+   
 
 </RelativeLayout>
