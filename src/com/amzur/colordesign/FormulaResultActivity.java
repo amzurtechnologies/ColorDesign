@@ -1,17 +1,21 @@
 package com.amzur.colordesign;
 
+import java.io.IOException;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.SQLException;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class FormulaResultActivity extends Activity implements OnClickListener {
 	Dialog dialog;
@@ -27,7 +31,7 @@ public class FormulaResultActivity extends Activity implements OnClickListener {
 		formulaResultHomeScreen     =   (Button)findViewById(R.id.formulaResultHomeButton);
 		formulaResultUpdateButton   =   (Button)findViewById(R.id.formulaResultUpdateButton);
 		
-		
+		data_function();
 		formulaResultBackScreen.setOnClickListener(this);
 		formulaResultHomeScreen.setOnClickListener(this);
 		formulaResultUpdateButton.setOnClickListener(this);
@@ -90,7 +94,34 @@ public class FormulaResultActivity extends Activity implements OnClickListener {
 	}
 	
 	
-	
+	public void data_function(){
+		DatabaseHelper myDbHelper = new DatabaseHelper(FormulaResultActivity.this); 
+        
+        
+        try {
+  
+           myDbHelper.createDataBase();
+  
+   } catch (IOException ioe) {
+         
+       throw new Error("Unable to create database");
+  
+   }
+  
+   try {
+  
+       myDbHelper.openDataBase();
+  
+   }catch(SQLException sqle){
+  
+       throw sqle;
+  
+   }
+   Toast.makeText(FormulaResultActivity.this, "Success", Toast.LENGTH_SHORT).show();
+   myDbHelper.some_function();
+    
+		
+	}
 	
 	
 	

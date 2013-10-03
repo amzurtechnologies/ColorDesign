@@ -9,14 +9,19 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class ColorLevelActivity extends Activity implements OnClickListener {
 	private boolean scrolling = false;
 	private Button colorLevelBackButton,colorLevelHomeButton,colorLevelNextButton;
+	private String colors[] =
+			new String[] {"1.Black","2.Darkest Brown","3.Dark Brown","4.Brown","5.Light Brown","6.Dark Blonde","7.Blonde","8.Light Blonde","9.Very Light Blonde","10.Platinum Blonde","11.Super Paltinum","12.Extra Super Platinum"};
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -54,11 +59,16 @@ public class ColorLevelActivity extends Activity implements OnClickListener {
 		naturalColor.setVisibleItems(5);
 		
 		
+		
+		
+	
+		
 		color.addChangingListener(new OnWheelChangedListener() {
 			@Override
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
 				if (!scrolling) {
 					updateColors(naturalColor, naturalColors, newValue);
+					
 				}
 			}
 		});
@@ -67,17 +77,38 @@ public class ColorLevelActivity extends Activity implements OnClickListener {
 			@Override
 			public void onScrollingStarted(WheelView wheel) {
 				scrolling = true;
+			  
+
 			}
 			@Override
 			public void onScrollingFinished(WheelView wheel) {
 				scrolling = false;
 				updateColors(naturalColor, naturalColors, color.getCurrentItem());
+				//Toast.makeText(getApplicationContext(), color.getCurrentItem(), Toast.LENGTH_LONG).show();
+				 Toast.makeText(getApplicationContext(),(colors[getWheel(R.id.color).getCurrentItem()]) , Toast.LENGTH_SHORT).show();
+				
+				
+//					}
 			}
+			
+			
 		});
 
 		color.setCurrentItem(1);
+		
+		
+		
+		
+		
 	}
 	
+	
+	protected WheelView getWheel(int id) {
+		// TODO Auto-generated method stub
+		return (WheelView) findViewById(id);
+	}
+
+
 	private void updateColors(WheelView colorLevel, String naturalColors[][], int index) {
 		ArrayWheelAdapter<String> adapter =
 				new ArrayWheelAdapter<String>(this, naturalColors[index]);
@@ -85,6 +116,9 @@ public class ColorLevelActivity extends Activity implements OnClickListener {
 		colorLevel.setCurrentItem(1);
 		colorLevel.setViewAdapter(adapter);
 		colorLevel.setCurrentItem(naturalColors[index].length / 2);
+	   
+		
+		
 	}
 	
 	private class ColorAdapter extends AbstractWheelTextAdapter {
@@ -99,8 +133,8 @@ public class ColorLevelActivity extends Activity implements OnClickListener {
 		}
 
 		// Countries names
-		private String colors[] =
-				new String[] {"1.Black","2.Darkest Brown","3.Dark Brown","4.Brown","5.Light Brown","6.Dark Blonde","7.Blonde","8.Light Blonde","9.Very Light Blonde","10.Platinum Blonde","11.Super Paltinum","12.Extra Super Platinum"};
+//		private String colors[] =
+//				new String[] {"1.Black","2.Darkest Brown","3.Dark Brown","4.Brown","5.Light Brown","6.Dark Blonde","7.Blonde","8.Light Blonde","9.Very Light Blonde","10.Platinum Blonde","11.Super Paltinum","12.Extra Super Platinum"};
 		// Countries flags
 		
 
@@ -127,6 +161,9 @@ public class ColorLevelActivity extends Activity implements OnClickListener {
 			return colors[index];
 		}
 	}
+	
+	
+	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -155,5 +192,9 @@ public class ColorLevelActivity extends Activity implements OnClickListener {
 		
 		 }
 	}
+	
+	
+	
+	
 
 }

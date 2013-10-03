@@ -26,7 +26,7 @@ public class NewFormula extends Activity implements OnClickListener {
 	private int colorSelectionImages[] =
 			new int[] {R.drawable.hair1, R.drawable.hair2, R.drawable.hair3, R.drawable.hair4,R.drawable.hair5,R.drawable.hair6,R.drawable.hair7,R.drawable.hair8,R.drawable.hair9,R.drawable.hair10};
 	
-	
+	String percentage,newFormulaScrollResult;
 	private String colorSelectionLevel[] =
 			new String[] {"1","2","3","4","5","6","7","8","9","10"};
 	@Override
@@ -35,8 +35,14 @@ public class NewFormula extends Activity implements OnClickListener {
 		setContentView(R.layout.activity_new_formula);
 		colorScreenBack = (Button)findViewById(R.id.colorScreenBackButton);
 		colorScreenNext = (Button)findViewById(R.id.colorScreenNextButton);
+		naturalButton1  = (Button)findViewById(R.id.naturalButton1);
+		naturalButton2  = (Button)findViewById(R.id.naturalButton2);
+		naturalButton3  = (Button)findViewById(R.id.naturalButton3);
 		colorScreenBack.setOnClickListener(this);
 		colorScreenNext.setOnClickListener(this);
+		naturalButton1.setOnClickListener(this);
+		naturalButton2.setOnClickListener(this);
+		naturalButton3.setOnClickListener(this);
         colorDye= (WheelView) findViewById(R.id.naturalColorSelection);
 		colorDye.setVisibleItems(3);
 		colorDye.setViewAdapter(new ColorAdapter(this));
@@ -54,6 +60,7 @@ public class NewFormula extends Activity implements OnClickListener {
 				// TODO Auto-generated method stub
 				wheelScrolled = false;
 				Toast.makeText(getApplicationContext(), (colorSelectionValues[getWheel(R.id.naturalColorSelection).getCurrentItem()]), Toast.LENGTH_SHORT).show();
+				newFormulaScrollResult = (colorSelectionValues[getWheel(R.id.naturalColorSelection).getCurrentItem()]);
 			}
 			private WheelView getWheel(int id) {
 				// TODO Auto-generated method stub
@@ -78,7 +85,17 @@ public class NewFormula extends Activity implements OnClickListener {
 			 
 			 break;
 			 
-		
+		 case R.id.naturalButton1:
+			 percentage = "0-40%";
+		     break;
+		     
+		 case R.id.naturalButton2:
+			  percentage = "40-70%";
+			  break;
+			  
+		 case R.id.naturalButton3:
+			 percentage = "70-100%";
+			 break;
 		 }
 	}
     
